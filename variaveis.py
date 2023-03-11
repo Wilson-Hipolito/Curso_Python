@@ -20,14 +20,16 @@ print(a)
 print(b)
 print(c)
 
-# Juntar variáveis 
+#Juntar variáveis 
 h = w + a
 print(h)
 
-# Somar variáveis
+#Somar variáveis
 l = x + j
 print(l)
 
-# Python é uma linguagem de tipagem forte e dinâmica, pois não é estática, pois as variáveis podem ter seus valores alterados depois de ser declarada
+"""
+Python é uma linguagem de tipagem forte e dinâmica, pois não é estática, pois as variáveis podem ter seus valores alterados depois de ser declarada
 l = w + x
 print(l) # Vai dar erro , pois o Python não pode concatenar uma string com um número
+"""
