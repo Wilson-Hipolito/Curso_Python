@@ -13,5 +13,13 @@ qual será o valor do mesmo com um desconto de (??)%.
 06 - Conversão de dólar para real.
 
 """
-
+#Exercício n° 1 - Área do Retângulo
+#Formular para resolver o exercício: area = base * altura
 print("Exercício 1° - Calculo da área de um retângulo.")
+
+base = input("Qual o tamanho da base do seu retângulo? ")
+altura = input("Qual o tamanho da altura do seu retângulo? ")
+area = float(base) * float(altura)
+
+print(f"O seu retângulo possui area de: {area} Unidades de medida")
+
