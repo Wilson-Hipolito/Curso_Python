@@ -9,11 +9,12 @@ def jogo():
 
     while(not enforcou and not acertou):
         
-        chute = input("Qual letra?")
+        chute = input("Qual letra? ")
+        chute = chute.strip()
+        
         posicao = 0
-
         for letra in palavra_secreta:
-            if(chute == letra):
+            if(chute.upper() == letra.upper()):
                 print("Encontrei a letra {}, na posição {}.".format(letra, posicao))
             posicao = posicao + 1
 
