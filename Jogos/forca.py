@@ -1,11 +1,14 @@
 def jogo():
-    print("***********************************")
+    print("\n\n***********************************")
     print("***Bem Vindo ao Jogo de Forca!!!***")
     print("***********************************\n")
 
     palavra_secreta = "banana"
-    enforcou = False
+    letras_acertadas = ['_', '_', '_', '_', '_', '_']
+    enforcou = False 
     acertou = False 
+
+    print(letras_acertadas, "\n")
 
     while(not enforcou and not acertou):
         
@@ -15,10 +18,12 @@ def jogo():
         posicao = 0
         for letra in palavra_secreta:
             if(chute.upper() == letra.upper()):
-                print("Encontrei a letra {}, na posição {}.".format(letra, posicao))
+                letras_acertadas[posicao] = letra 
             posicao = posicao + 1
 
-        print("Jogando......")
+        print(letras_acertadas)
+        letras_faltando = str(letras_acertadas.count('_'))
+        print("Ainda faltam acertar {} letras.".format(letras_faltando))
 
     print("***********************************")
     print("**********Fim do jogo!!!***********")
