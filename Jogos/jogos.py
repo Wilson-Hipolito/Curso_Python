@@ -1,6 +1,7 @@
 import forca
 import jogo_adivinhacao
 
+
 def escolhe_jogo():
 
     print("***********************************")
@@ -20,5 +21,6 @@ def escolhe_jogo():
     else:
         print("Você Não Escolheu Uma Opção Valida.")
 
-if (__name__ == "__main__"):
+
+if __name__ == "__main__":
     escolhe_jogo()
