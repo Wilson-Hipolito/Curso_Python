@@ -1,5 +1,6 @@
 import random
 
+
 def jogo():
     print("\n***********************************")
     print("   BEM VINDO AO JOGO DA FORCA !!!  ")
@@ -51,7 +52,7 @@ def jogo():
     print("\n***********************************")
     print("**********FIM DO JOGO !!!**********")
     print("***********************************\n")
+   
 
-
-if (__name__ == "__main__"):
+if __name__ == "__main__":
     jogo()
