@@ -49,7 +49,7 @@ def imprime_msg_abertura():
 
 
 def carregar_palavra_secreta():
-    arquivo = open("palavras.txt", "r")
+    arquivo = open('/media/wilson/HDD Secundário/Documentos/Cursos/TI/Python/Curso_Python/Jogos/palavras.txt', "r")
     palavras = []
 
     for linha in arquivo:
