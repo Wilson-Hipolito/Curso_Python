@@ -14,16 +14,11 @@ def jogo():
 
     while (not enforcou and not acertou):
 
-        chute = input("\nTente acertar, digite uma letra: ")
-        chute = chute.strip().upper()
+        chute = pede_chute()
 
         if chute in palavra_secreta:
             print("Parabéns você acertou a letra !!!")
-            posicao = 0
-            for letra in palavra_secreta:
-                if chute == letra:
-                    letras_acertadas[posicao] = letra
-                posicao += 1
+            marca_chute_correto(chute, letras_acertadas, palavra_secreta)
         else:
             print("Você errou a letra !!!")
             erros += -1
@@ -34,12 +29,31 @@ def jogo():
         print("Faltam acertar {} letras.".format(letras_faltando))
         print("Você possui {} tentativas.".format(erros))
     if acertou:
-        print("\n VOCÊ GANHOU, PARABÉNS !!!")
+        imprime_vencedor()
     else:
-        print("\nVOCÊ PERDEU, TENTE NOVAMENTE !!!")
-    print("\n***********************************")
-    print("**********FIM DO JOGO !!!**********")
-    print("***********************************\n")
+        imprime_perdedor()
+
+
+def imprime_vencedor():
+    print("\n VOCÊ GANHOU, PARABÉNS !!!")
+
+
+def imprime_perdedor():
+    print("\nVOCÊ PERDEU, TENTE NOVAMENTE !!!") 
+
+
+def marca_chute_correto(chute, letras_acertadas, palavra_secreta):
+    posicao = 0
+    for letra in palavra_secreta:
+        if chute == letra:
+            letras_acertadas[posicao] = letra
+        posicao += 1
+
+
+def pede_chute():
+    chute = input("\nTente acertar, digite uma letra: ")
+    chute = chute.strip().upper()
+    return chute
 
 
 def imprime_msg_abertura():
