@@ -21,3 +21,23 @@ class Conta:
     def transfere(self, valor, destino):
         self.saque(valor)
         destino.deposita(valor)
+
+    @property
+    def saldo(self):
+        return self.__saldo
+
+    @property
+    def titular(self):
+        return self.__titular.title()
+
+    @titular.setter
+    def titular(self, titular):
+        self.__titular = titular
+
+    @property
+    def limite(self):
+        return self.__limite
+
+    @limite.setter
+    def limite(self, limite):
+        self.__limite = limite
