@@ -52,3 +52,6 @@ class Conta:
     @staticmethod  #Metodo estático não depende da criação de um objeto.
     def codigos_bancos():
         return {'BB': '001', 'Caixa': '104', 'Bradesco':'237'}
+
+    cartoes = {"Mastercard":"01", "Visa":"02", "Elo":"03", "AmericanExpress":"04"}
+    #O atributo faz parte da classe, ou seja, é um atributo estático que pode ser usado sem ter criado um objeto.
