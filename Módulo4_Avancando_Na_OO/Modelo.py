@@ -26,10 +26,15 @@ class Programa:
 class Playlist:
     def __init__(self, nome, programas):
         self.nome = nome
-        self.programas = programas
+        self._programas = programas
 
+    @property
+    def listagem(self):
+        return self._programas
+
+    @property
     def tamanho(self):
-        return len(self.programas)
+        return len(self._programas)
 
 
 class Filme(Programa):
@@ -71,5 +76,11 @@ demolidor.dar_like()
 filmes_e_series = [vingadores, atlanta, demolidor, tmep]
 playlist_fim_de_semana = Playlist('Fim de Semana', filmes_e_series)
 
-for programa in playlist_fim_de_semana.programas:
-    print(programa)
+print(f'\n Tamanho da Playlist: {len(playlist_fim_de_semana.listagem)}')
+print(f'-----------------------------')
+
+for programa in playlist_fim_de_semana.listagem:
+    print(f'\n {programa} \n')
+
+print(f'------------------------------')
+print(f' Demolidor está na Playlist?: {demolidor in playlist_fim_de_semana.listagem} \n')
