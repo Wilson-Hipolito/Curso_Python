@@ -28,12 +28,14 @@ class Playlist:
         self.nome = nome
         self._programas = programas
 
+    def __getitem__(self, item):
+        return self._programas[item]
+
     @property
     def listagem(self):
         return self._programas
 
-    @property
-    def tamanho(self):
+    def __len__(self):
         return len(self._programas)
 
 
@@ -76,11 +78,11 @@ demolidor.dar_like()
 filmes_e_series = [vingadores, atlanta, demolidor, tmep]
 playlist_fim_de_semana = Playlist('Fim de Semana', filmes_e_series)
 
-print(f'\n Tamanho da Playlist: {len(playlist_fim_de_semana.listagem)}')
+print(f'\n Tamanho da Playlist: {len(playlist_fim_de_semana)}')
 print(f'-----------------------------')
 
-for programa in playlist_fim_de_semana.listagem:
+for programa in playlist_fim_de_semana:
     print(f'\n {programa} \n')
 
 print(f'------------------------------')
-print(f' Demolidor está na Playlist?: {demolidor in playlist_fim_de_semana.listagem} \n')
+print(playlist_fim_de_semana[2])
