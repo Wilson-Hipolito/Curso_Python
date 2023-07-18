@@ -64,7 +64,7 @@ demolidor = Serie('Demolidor', 2016, 2)
 
 vingadores.dar_like()
 vingadores.dar_like()
-atlanta.dar_like()
+vingadores.dar_like()
 atlanta.dar_like()
 atlanta.dar_like()
 tmep.dar_like()
