@@ -1,5 +1,10 @@
 # Comparando objetos no Python.
 
+from datetime import datetime
+import pytz
+from pytz import timezone
+
+
 class Filmes():
     def __init__(self, titulo, diretor):
         self.titulo = titulo
@@ -39,3 +44,12 @@ if tenho_o_filme(filme_procurado):
     print('\nTenho o Filme!')
 else:
     print('\nNão Tenho :(')
+
+
+data_e_hora_atual = datetime.now()
+fuso_horario = timezone('America/Sao_Paulo')
+
+data_e_hora_sao_paulo = data_e_hora_atual.astimezone(fuso_horario)
+data_e_hora_sao_paulo_em_texto = data_e_hora_sao_paulo.strftime('%d/%m/%y - %H:%M')
+
+print('\n', data_e_hora_sao_paulo_em_texto,'\n')
