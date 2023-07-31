@@ -1,4 +1,4 @@
-
+#Jogo Quiz.
 
 quiz = {
     'Qual banda é conhecida como "A Maior Banda de Rock do Mundo"?': {
