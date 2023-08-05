@@ -1,22 +1,29 @@
 #Trabalhando com URLs.
 
-url = "\nhttps://bytebank.com/cambio?moedaDestino=Dolar&moedaOrigem=real\n"
-#print(url)
+# url = "\nhttps://bytebank.com/cambio?quantidade=100&moedaDestino=Dolar&moedaOrigem=real\n"
+url = '  '
 
-procurando_string = url.find('?')
-#print('A String está na posição: {}'.format(procurando_string))
+# Sanitização da URl.
+url = url.strip()
 
+# Validação da URL.
+if url == '':
+    raise ValueError('A URL Está Vazia.')
+
+# Separa base de parâmetros.
 indice_interrogacao = url.find('?')
 url_base = url[:indice_interrogacao]
-#print(url_base, '\n')
-
 url_parametros = url[indice_interrogacao+1:]
-print(url_parametros, '\n')
+print('\n', url_parametros, '\n')
 
-parametro_busca = 'moedaOrigem'
+# Busca o valor de um parâmentro.
+parametro_busca = 'moedaDestino'
 indice_parametro = url_parametros.find(parametro_busca)
-print(indice_parametro)
-
 indice_valor = indice_parametro + len(parametro_busca) + 1
-valor = url_parametros[indice_valor:]
-print(valor)
+indice_e_comercial = url_parametros.find('&', indice_valor)
+if indice_e_comercial == -1:
+    valor = url_parametros[indice_valor:]
+else:
+    valor = url_parametros[indice_valor:indice_e_comercial]
+
+print(valor, '\n')
