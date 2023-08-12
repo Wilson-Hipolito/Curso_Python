@@ -4,16 +4,27 @@ class ExtratorUrl:
         self.valida_url()
 
     def sanitiza_url(self, url):
-        return url.strip()
+        if type(url) == str:
+            return url.strip()
+        else:
+            return ''
 
     def valida_url(self):
-        if self.url == '':
+        if not self.url:
             raise ValueError('A URL Está Vazia.')
 
     def get_url_base(self):
         indice_interrogacao = self.url.find('?')
         url_base = self.url[:indice_interrogacao]
         return url_base
+
+    def valida_inicio_url(self):
+        verifica_https = self.url.startswith('https')
+        if not verifica_https:
+        
+
+    def verifica_fim(self):
+        pass
 
     def get_url_parametros(self):
         indice_interrogacao = self.url.find('?')
