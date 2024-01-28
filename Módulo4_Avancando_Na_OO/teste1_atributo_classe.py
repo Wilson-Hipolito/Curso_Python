@@ -13,7 +13,7 @@ pe = Pessoa("315.078.945-34", "Renata")
 print(f'\nO CPF é: {pe.valida_cpf()}')
 
 pe = Pessoa("234.321.567-901", "Wilson")
-print(f'O CPF é: {pe.valida_cpf()}\n')
+print(f'O CPF: {pe.valida_cpf()}\n')
 
 #Veja como o valor de `tamanho_cpf` é usado por todas as instâncias.
 #Esse é um atributo de classe. É possível alterar o valor deste atributo,
